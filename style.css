@@ -36,7 +36,7 @@ body{
 
 .search-box input{
     color: #06283D;
-    width: 80%;
+    width: 100%;
     font-size: 24px;
     font-weight: 500;
     text-transform: uppercase;
@@ -52,25 +52,13 @@ body{
 
 .search-box button{
     cursor: pointer;
-    width: 50px;
-    height: 50px;
-    color: #06283D;
-    background: #dff6ff;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
-    font-size: 22px;
+    font-size: 40px;
     transition: 0.4s ease;
 }
 
-.search-box button:hover{
-    color: #fff;
-    background: #06283D;
-}
-
-.search-box i{
-    position: absolute;
-    color: #06283D;
-    font-size: 28px;
-}
 
 .weather-box{
     text-align: center;
@@ -280,54 +268,6 @@ body{
 }
 }
 
-
-/* Clear Search Button */
-
-.clearBox{
-
-    display: flex;
-    justify-content: center;
-    
-}
-
-.clear-Search{
-
-    background-color: #e1ecf4;
-    border-radius: 3px;
-    border: 1px solid #7aa7c7;
-    box-shadow: rgba(255, 255, 255, .7) 0 1px 0 0 inset;
-    box-sizing: border-box;
-    color: #39739d;
-    cursor: pointer;
-    font-family: -apple-system,system-ui,"Segoe UI","Liberation Sans",sans-serif;
-    font-size: 13px;
-    font-weight: 400;
-    line-height: 1.15385;
-    margin-top: 0.5rem;
-    outline: none;
-    padding: 8px .8em;
-    position: relative;
-    text-align: center;
-    text-decoration: none;
-    user-select: none;
-    -webkit-user-select: none;
-    touch-action: manipulation;
-    vertical-align: baseline;
-    white-space: nowrap;
-}
-
-.clear-Search:hover,
-.clear-Search:focus {
-    background-color: #b3d3ea;
-    color: #2c5777;
-}
-
-
-.clear-Search:active {
-    background-color: #a0c7e4;
-    box-shadow: none;
-    color: #2c5777;
-}
 
 
 

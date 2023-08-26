@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Roboto:wght@300;400;500;700;900&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tarekraafat-autocomplete.js/10.2.7/css/autoComplete.min.css">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
     <link rel="stylesheet" href="style.css">
     <title>Weather App</title>
 </head>
@@ -17,11 +17,10 @@
     <div>
         <div class="container">
             <div class="search-box">
-                <i class="fa-solid fa-location-dot"></i>
                 <form id="form">
-                    <input id="inputText" type="text" placeholder="Enter your location">
+                    <input id="autoComplete" type="text" placeholder="Enter your location">
                 </form>
-                <button onclick="searchLocation()" class="fa-solid fa-magnifying-glass"></button>
+                <button id="x" style="display: none;" onclick="clearSearch()"><i class="ph ph-x-circle"></i></button>
             </div>
 
             <div class="not-found">
@@ -51,10 +50,6 @@
                     </div>
                 </div>
             </div>
-
-            <div class="">
-                <button class = "clear-Search" onclick= "clearSearch()">Clear Search</button>
-            </div>
             
         </div>
 
@@ -66,8 +61,19 @@
         </div>
     </div>
 
-    <!-- SCRIPT -->
+    <!-- SCRIPTS -->
+
+    <!-- FONTS -->
     <script src="https://kit.fontawesome.com/7c8801c017.js" crossorigin="anonymous"></script>
+
+    <!-- SWEETALERT -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <!-- AUTO COMPLETE -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tarekraafat-autocomplete.js/10.2.7/autoComplete.min.js"></script>
+
+    <!-- CUSTOM SCRIPT -->
     <script src="index.js"></script>
 </body>
 
