@@ -9,257 +9,754 @@ const form = document.getElementById('form')
 const x = document.getElementById('x');
 
 
-
 //Autocomplete Countries
 const autoCompleteJS = new autoComplete({
     placeHolder: "Enter your Location",
     data: {
 
-        src: [
-            { name: 'Afghanistan'},
-            { name: 'Åland Islands', code: 'AX' },
-            { name: 'Albania', code: 'AL' },
-            { name: 'Algeria', code: 'DZ' },
-            { name: 'American Samoa', code: 'AS' },
-            { name: 'AndorrA', code: 'AD' },
-            { name: 'Angola', code: 'AO' },
-            { name: 'Anguilla', code: 'AI' },
-            { name: 'Antarctica', code: 'AQ' },
-            { name: 'Antigua and Barbuda', code: 'AG' },
-            { name: 'Argentina', code: 'AR' },
-            { name: 'Armenia', code: 'AM' },
-            { name: 'Aruba', code: 'AW' },
-            { name: 'Australia', code: 'AU' },
-            { name: 'Austria', code: 'AT' },
-            { name: 'Azerbaijan', code: 'AZ' },
-            { name: 'Bahamas', code: 'BS' },
-            { name: 'Bahrain', code: 'BH' },
-            { name: 'Bangladesh', code: 'BD' },
-            { name: 'Barbados', code: 'BB' },
-            { name: 'Belarus', code: 'BY' },
-            { name: 'Belgium', code: 'BE' },
-            { name: 'Belize', code: 'BZ' },
-            { name: 'Benin', code: 'BJ' },
-            { name: 'Bermuda', code: 'BM' },
-            { name: 'Bhutan', code: 'BT' },
-            { name: 'Bolivia', code: 'BO' },
-            { name: 'Bosnia and Herzegovina', code: 'BA' },
-            { name: 'Botswana', code: 'BW' },
-            { name: 'Bouvet Island', code: 'BV' },
-            { name: 'Brazil', code: 'BR' },
-            { name: 'British Indian Ocean Territory', code: 'IO' },
-            { name: 'Brunei Darussalam', code: 'BN' },
-            { name: 'Bulgaria', code: 'BG' },
-            { name: 'Burkina Faso', code: 'BF' },
-            { name: 'Burundi', code: 'BI' },
-            { name: 'Cambodia', code: 'KH' },
-            { name: 'Cameroon', code: 'CM' },
-            { name: 'Canada', code: 'CA' },
-            { name: 'Cape Verde', code: 'CV' },
-            { name: 'Cayman Islands', code: 'KY' },
-            { name: 'Central African Republic', code: 'CF' },
-            { name: 'Chad', code: 'TD' },
-            { name: 'Chile', code: 'CL' },
-            { name: 'China', code: 'CN' },
-            { name: 'Christmas Island', code: 'CX' },
-            { name: 'Cocos (Keeling) Islands', code: 'CC' },
-            { name: 'Colombia', code: 'CO' },
-            { name: 'Comoros', code: 'KM' },
-            { name: 'Congo', code: 'CG' },
-            { name: 'Congo, The Democratic Republic of the', code: 'CD' },
-            { name: 'Cook Islands', code: 'CK' },
-            { name: 'Costa Rica', code: 'CR' },
-            { name: 'Cote D\'Ivoire', code: 'CI' },
-            { name: 'Croatia', code: 'HR' },
-            { name: 'Cuba', code: 'CU' },
-            { name: 'Cyprus', code: 'CY' },
-            { name: 'Czech Republic', code: 'CZ' },
-            { name: 'Denmark', code: 'DK' },
-            { name: 'Djibouti', code: 'DJ' },
-            { name: 'Dominica', code: 'DM' },
-            { name: 'Dominican Republic', code: 'DO' },
-            { name: 'Ecuador', code: 'EC' },
-            { name: 'Egypt', code: 'EG' },
-            { name: 'El Salvador', code: 'SV' },
-            { name: 'Equatorial Guinea', code: 'GQ' },
-            { name: 'Eritrea', code: 'ER' },
-            { name: 'Estonia', code: 'EE' },
-            { name: 'Ethiopia', code: 'ET' },
-            { name: 'Falkland Islands (Malvinas)', code: 'FK' },
-            { name: 'Faroe Islands', code: 'FO' },
-            { name: 'Fiji', code: 'FJ' },
-            { name: 'Finland', code: 'FI' },
-            { name: 'France', code: 'FR' },
-            { name: 'French Guiana', code: 'GF' },
-            { name: 'French Polynesia', code: 'PF' },
-            { name: 'French Southern Territories', code: 'TF' },
-            { name: 'Gabon', code: 'GA' },
-            { name: 'Gambia', code: 'GM' },
-            { name: 'Georgia', code: 'GE' },
-            { name: 'Germany', code: 'DE' },
-            { name: 'Ghana', code: 'GH' },
-            { name: 'Gibraltar', code: 'GI' },
-            { name: 'Greece', code: 'GR' },
-            { name: 'Greenland', code: 'GL' },
-            { name: 'Grenada', code: 'GD' },
-            { name: 'Guadeloupe', code: 'GP' },
-            { name: 'Guam', code: 'GU' },
-            { name: 'Guatemala', code: 'GT' },
-            { name: 'Guernsey', code: 'GG' },
-            { name: 'Guinea', code: 'GN' },
-            { name: 'Guinea-Bissau', code: 'GW' },
-            { name: 'Guyana', code: 'GY' },
-            { name: 'Haiti', code: 'HT' },
-            { name: 'Heard Island and Mcdonald Islands', code: 'HM' },
-            { name: 'Holy See (Vatican City State)', code: 'VA' },
-            { name: 'Honduras', code: 'HN' },
-            { name: 'Hong Kong', code: 'HK' },
-            { name: 'Hungary', code: 'HU' },
-            { name: 'Iceland', code: 'IS' },
-            { name: 'India', code: 'IN' },
-            { name: 'Indonesia', code: 'ID' },
-            { name: 'Iran, Islamic Republic Of', code: 'IR' },
-            { name: 'Iraq', code: 'IQ' },
-            { name: 'Ireland', code: 'IE' },
-            { name: 'Isle of Man', code: 'IM' },
-            { name: 'Israel', code: 'IL' },
-            { name: 'Italy', code: 'IT' },
-            { name: 'Jamaica', code: 'JM' },
-            { name: 'Japan', code: 'JP' },
-            { name: 'Jersey', code: 'JE' },
-            { name: 'Jordan', code: 'JO' },
-            { name: 'Kazakhstan', code: 'KZ' },
-            { name: 'Kenya', code: 'KE' },
-            { name: 'Kiribati', code: 'KI' },
-            { name: 'Korea, Democratic People\'S Republic of', code: 'KP' },
-            { name: 'Korea, Republic of', code: 'KR' },
-            { name: 'Kuwait', code: 'KW' },
-            { name: 'Kyrgyzstan', code: 'KG' },
-            { name: 'Lao People\'S Democratic Republic', code: 'LA' },
-            { name: 'Latvia', code: 'LV' },
-            { name: 'Lebanon', code: 'LB' },
-            { name: 'Lesotho', code: 'LS' },
-            { name: 'Liberia', code: 'LR' },
-            { name: 'Libyan Arab Jamahiriya', code: 'LY' },
-            { name: 'Liechtenstein', code: 'LI' },
-            { name: 'Lithuania', code: 'LT' },
-            { name: 'Luxembourg', code: 'LU' },
-            { name: 'Macao', code: 'MO' },
-            { name: 'Macedonia, The Former Yugoslav Republic of', code: 'MK' },
-            { name: 'Madagascar', code: 'MG' },
-            { name: 'Malawi', code: 'MW' },
-            { name: 'Malaysia', code: 'MY' },
-            { name: 'Maldives', code: 'MV' },
-            { name: 'Mali', code: 'ML' },
-            { name: 'Malta', code: 'MT' },
-            { name: 'Marshall Islands', code: 'MH' },
-            { name: 'Martinique', code: 'MQ' },
-            { name: 'Mauritania', code: 'MR' },
-            { name: 'Mauritius', code: 'MU' },
-            { name: 'Mayotte', code: 'YT' },
-            { name: 'Mexico', code: 'MX' },
-            { name: 'Micronesia, Federated States of', code: 'FM' },
-            { name: 'Moldova, Republic of', code: 'MD' },
-            { name: 'Monaco', code: 'MC' },
-            { name: 'Mongolia', code: 'MN' },
-            { name: 'Montserrat', code: 'MS' },
-            { name: 'Morocco', code: 'MA' },
-            { name: 'Mozambique', code: 'MZ' },
-            { name: 'Myanmar', code: 'MM' },
-            { name: 'Namibia', code: 'NA' },
-            { name: 'Nauru', code: 'NR' },
-            { name: 'Nepal', code: 'NP' },
-            { name: 'Netherlands', code: 'NL' },
-            { name: 'Netherlands Antilles', code: 'AN' },
-            { name: 'New Caledonia', code: 'NC' },
-            { name: 'New Zealand', code: 'NZ' },
-            { name: 'Nicaragua', code: 'NI' },
-            { name: 'Niger', code: 'NE' },
-            { name: 'Nigeria', code: 'NG' },
-            { name: 'Niue', code: 'NU' },
-            { name: 'Norfolk Island', code: 'NF' },
-            { name: 'Northern Mariana Islands', code: 'MP' },
-            { name: 'Norway', code: 'NO' },
-            { name: 'Oman', code: 'OM' },
-            { name: 'Pakistan', code: 'PK' },
-            { name: 'Palau', code: 'PW' },
-            { name: 'Palestinian Territory, Occupied', code: 'PS' },
-            { name: 'Panama', code: 'PA' },
-            { name: 'Papua New Guinea', code: 'PG' },
-            { name: 'Paraguay', code: 'PY' },
-            { name: 'Peru', code: 'PE' },
-            { name: 'Philippines', code: 'PH' },
-            { name: 'Pitcairn', code: 'PN' },
-            { name: 'Poland', code: 'PL' },
-            { name: 'Portugal', code: 'PT' },
-            { name: 'Puerto Rico', code: 'PR' },
-            { name: 'Qatar', code: 'QA' },
-            { name: 'Reunion', code: 'RE' },
-            { name: 'Romania', code: 'RO' },
-            { name: 'Russian Federation', code: 'RU' },
-            { name: 'RWANDA', code: 'RW' },
-            { name: 'Saint Helena', code: 'SH' },
-            { name: 'Saint Kitts and Nevis', code: 'KN' },
-            { name: 'Saint Lucia', code: 'LC' },
-            { name: 'Saint Pierre and Miquelon', code: 'PM' },
-            { name: 'Saint Vincent and the Grenadines', code: 'VC' },
-            { name: 'Samoa', code: 'WS' },
-            { name: 'San Marino', code: 'SM' },
-            { name: 'Sao Tome and Principe', code: 'ST' },
-            { name: 'Saudi Arabia', code: 'SA' },
-            { name: 'Senegal', code: 'SN' },
-            { name: 'Serbia and Montenegro', code: 'CS' },
-            { name: 'Seychelles', code: 'SC' },
-            { name: 'Sierra Leone', code: 'SL' },
-            { name: 'Singapore', code: 'SG' },
-            { name: 'Slovakia', code: 'SK' },
-            { name: 'Slovenia', code: 'SI' },
-            { name: 'Solomon Islands', code: 'SB' },
-            { name: 'Somalia', code: 'SO' },
-            { name: 'South Africa', code: 'ZA' },
-            { name: 'South Georgia and the South Sandwich Islands', code: 'GS' },
-            { name: 'Spain', code: 'ES' },
-            { name: 'Sri Lanka', code: 'LK' },
-            { name: 'Sudan', code: 'SD' },
-            { name: 'Suriname', code: 'SR' },
-            { name: 'Svalbard and Jan Mayen', code: 'SJ' },
-            { name: 'Swaziland', code: 'SZ' },
-            { name: 'Sweden', code: 'SE' },
-            { name: 'Switzerland', code: 'CH' },
-            { name: 'Syrian Arab Republic', code: 'SY' },
-            { name: 'Taiwan, Province of China', code: 'TW' },
-            { name: 'Tajikistan', code: 'TJ' },
-            { name: 'Tanzania, United Republic of', code: 'TZ' },
-            { name: 'Thailand', code: 'TH' },
-            { name: 'Timor-Leste', code: 'TL' },
-            { name: 'Togo', code: 'TG' },
-            { name: 'Tokelau', code: 'TK' },
-            { name: 'Tonga', code: 'TO' },
-            { name: 'Trinidad and Tobago', code: 'TT' },
-            { name: 'Tunisia', code: 'TN' },
-            { name: 'Turkey', code: 'TR' },
-            { name: 'Turkmenistan', code: 'TM' },
-            { name: 'Turks and Caicos Islands', code: 'TC' },
-            { name: 'Tuvalu', code: 'TV' },
-            { name: 'Uganda', code: 'UG' },
-            { name: 'Ukraine', code: 'UA' },
-            { name: 'United Arab Emirates', code: 'AE' },
-            { name: 'United Kingdom', code: 'GB' },
-            { name: 'United States', code: 'US' },
-            { name: 'United States Minor Outlying Islands', code: 'UM' },
-            { name: 'Uruguay', code: 'UY' },
-            { name: 'Uzbekistan', code: 'UZ' },
-            { name: 'Vanuatu', code: 'VU' },
-            { name: 'Venezuela', code: 'VE' },
-            { name: 'Viet Nam', code: 'VN' },
-            { name: 'Virgin Islands, British', code: 'VG' },
-            { name: 'Virgin Islands, U.S.', code: 'VI' },
-            { name: 'Wallis and Futuna', code: 'WF' },
-            { name: 'Western Sahara', code: 'EH' },
-            { name: 'Yemen', code: 'YE' },
-            { name: 'Zambia', code: 'ZM' },
-            { name: 'Zimbabwe', code: 'ZW' } 
-        ],
+        src: [{
+            name: "Abidjan, Ivory Coast"
+        }, {
+            name: "Abu Dhabi, United Arab Emirates"
+        }, {
+            name: "Abuja, Nigeria"
+        }, {
+            name: "Accra, Ghana"
+        }, {
+            name: "Addis Ababa, Ethiopia"
+        }, {
+            name: "Ahmedabad, India"
+        }, {
+            name: "Aleppo, Syria"
+        }, {
+            name: "Alexandria, Egypt"
+        }, {
+            name: "Algiers, Algeria"
+        }, {
+            name: "Almaty, Kazakhstan"
+        }, {
+            name: "Amman, Jordan"
+        }, {
+            name: "Amsterdam, Netherlands"
+        }, {
+            name: "Anchorage, United States"
+        }, {
+            name: "Andorra la Vella, Andorra"
+        }, {
+            name: "Ankara, Turkey"
+        }, {
+            name: "Antananarivo, Madagascar"
+        }, {
+            name: "Apia, Samoa"
+        }, {
+            name: "Arnold, United States"
+        }, {
+            name: "Ashgabat, Turkmenistan"
+        }, {
+            name: "Asmara, Eritrea"
+        }, {
+            name: "Asuncion, Paraguay"
+        }, {
+            name: "Athens, Greece"
+        }, {
+            name: "Auckland, New Zealand"
+        }, {
+            name: "Avarua, Cook Islands"
+        }, {
+            name: "Baghdad, Iraq"
+        }, {
+            name: "Baku, Azerbaijan"
+        }, {
+            name: "Bamako, Mali"
+        }, {
+            name: "Banda Aceh, Indonesia"
+        }, {
+            name: "Bandar Seri Begawan, Brunei"
+        }, {
+            name: "Bandung, Indonesia"
+        }, {
+            name: "Bangkok, Thailand"
+        }, {
+            name: "Bangui, Central African Republic"
+        }, {
+            name: "Banjul, Gambia"
+        }, {
+            name: "Barcelona, Spain"
+        }, {
+            name: "Barranquilla, Colombia"
+        }, {
+            name: "Basrah, Iraq"
+        }, {
+            name: "Basse-Terre, Guadeloupe"
+        }, {
+            name: "Basseterre, Saint Kitts and Nevis"
+        }, {
+            name: "Beijing, China"
+        }, {
+            name: "Beirut, Lebanon"
+        }, {
+            name: "Bekasi, Indonesia"
+        }, {
+            name: "Belem, Brazil"
+        }, {
+            name: "Belgrade, Serbia"
+        }, {
+            name: "Belmopan, Belize"
+        }, {
+            name: "Belo Horizonte, Brazil"
+        }, {
+            name: "Bengaluru, India"
+        }, {
+            name: "Berlin, Germany"
+        }, {
+            name: "Bern, Switzerland"
+        }, {
+            name: "Bishkek, Kyrgyzstan"
+        }, {
+            name: "Bissau, Guinea-Bissau"
+        }, {
+            name: "Bogota, Colombia"
+        }, {
+            name: "Brasilia, Brazil"
+        }, {
+            name: "Bratislava, Slovakia"
+        }, {
+            name: "Brazzaville, Republic of the Congo"
+        }, {
+            name: "Bridgetown, Barbados"
+        }, {
+            name: "Brisbane, Australia"
+        }, {
+            name: "Brussels, Belgium"
+        }, {
+            name: "Bucharest, Romania"
+        }, {
+            name: "Budapest, Hungary"
+        }, {
+            name: "Buenos Aires, Argentina"
+        }, {
+            name: "Bujumbura, Burundi"
+        }, {
+            name: "Bursa, Turkey"
+        }, {
+            name: "Busan, South Korea"
+        }, {
+            name: "Cairo, Egypt"
+        }, {
+            name: "Cali, Colombia"
+        }, {
+            name: "Caloocan, Philippines"
+        }, {
+            name: "Camayenne, Guinea"
+        }, {
+            name: "Canberra, Australia"
+        }, {
+            name: "Cape Town, South Africa"
+        }, {
+            name: "Caracas, Venezuela"
+        }, {
+            name: "Casablanca, Morocco"
+        }, {
+            name: "Castries, Saint Lucia"
+        }, {
+            name: "Cayenne, French Guiana"
+        }, {
+            name: "Charlotte Amalie, U.S. Virgin Islands"
+        }, {
+            name: "Chengdu, China"
+        }, {
+            name: "Chennai, India"
+        }, {
+            name: "Chicago, United States"
+        }, {
+            name: "Chisinau, Moldova"
+        }, {
+            name: "Chittagong, Bangladesh"
+        }, {
+            name: "Chongqing, China"
+        }, {
+            name: "Colombo, Sri Lanka"
+        }, {
+            name: "Conakry, Guinea"
+        }, {
+            name: "Copenhagen, Denmark"
+        }, {
+            name: "Cordoba, Argentina"
+        }, {
+            name: "Curitiba, Brazil"
+        }, {
+            name: "Daegu, South Korea"
+        }, {
+            name: "Daejeon, South Korea"
+        }, {
+            name: "Dakar, Senegal"
+        }, {
+            name: "Dallas, United States"
+        }, {
+            name: "Damascus, Syria"
+        }, {
+            name: "Dar es Salaam, Tanzania"
+        }, {
+            name: "Delhi, India"
+        }, {
+            name: "Denver, United States"
+        }, {
+            name: "Dhaka, Bangladesh"
+        }, {
+            name: "Dili, Timor Leste"
+        }, {
+            name: "Djibouti, Djibouti"
+        }, {
+            name: "Dodoma, Tanzania"
+        }, {
+            name: "Doha, Qatar"
+        }, {
+            name: "Dongguan, China"
+        }, {
+            name: "Douala, Cameroon"
+        }, {
+            name: "Douglas, Isle of Man"
+        }, {
+            name: "Dubai, United Arab Emirates"
+        }, {
+            name: "Dublin, Ireland"
+        }, {
+            name: "Durban, South Africa"
+        }, {
+            name: "Dushanbe, Tajikistan"
+        }, {
+            name: "Faisalabad, Pakistan"
+        }, {
+            name: "Fort-de-France, Martinique"
+        }, {
+            name: "Fortaleza, Brazil"
+        }, {
+            name: "Freetown, Sierra Leone"
+        }, {
+            name: "Fukuoka, Japan"
+        }, {
+            name: "Funafuti, Tuvalu"
+        }, {
+            name: "Gaborone, Botswana"
+        }, {
+            name: "George Town, Malaysia"
+        }, {
+            name: "Georgetown, Guyana"
+        }, {
+            name: "Gibraltar, Gibraltar"
+        }, {
+            name: "Gitega, Burundi"
+        }, {
+            name: "Giza, Egypt"
+        }, {
+            name: "Guadalajara, Mexico"
+        }, {
+            name: "Guangzhou, China"
+        }, {
+            name: "Guatemala City, Guatemala"
+        }, {
+            name: "Guayaquil, Ecuador"
+        }, {
+            name: "Gujranwala, Pakistan"
+        }, {
+            name: "Gustavia, Saint Barthelemy"
+        }, {
+            name: "Gwangju, South Korea"
+        }, {
+            name: "Hamburg, Germany"
+        }, {
+            name: "Hanoi, Vietnam"
+        }, {
+            name: "Harare, Zimbabwe"
+        }, {
+            name: "Havana, Cuba"
+        }, {
+            name: "Helsinki, Finland"
+        }, {
+            name: "Ho Chi Minh City, Vietnam"
+        }, {
+            name: "Hong Kong, Hong Kong"
+        }, {
+            name: "Honiara, Solomon Islands"
+        }, {
+            name: "Honolulu, United States"
+        }, {
+            name: "Houston, United States"
+        }, {
+            name: "Hyderabad, India"
+        }, {
+            name: "Hyderabad, Pakistan"
+        }, {
+            name: "Ibadan, Nigeria"
+        }, {
+            name: "Incheon, South Korea"
+        }, {
+            name: "Isfahan, Iran"
+        }, {
+            name: "Islamabad, Pakistan"
+        }, {
+            name: "Istanbul, Turkey"
+        }, {
+            name: "Izmir, Turkey"
+        }, {
+            name: "Jaipur, India"
+        }, {
+            name: "Jakarta, Indonesia"
+        }, {
+            name: "Jeddah, Saudi Arabia"
+        }, {
+            name: "Jerusalem, Israel"
+        }, {
+            name: "Johannesburg, South Africa"
+        }, {
+            name: "Juarez, Mexico"
+        }, {
+            name: "Juba, South Sudan"
+        }, {
+            name: "Kabul, Afghanistan"
+        }, {
+            name: "Kaduna, Nigeria"
+        }, {
+            name: "Kampala, Uganda"
+        }, {
+            name: "Kano, Nigeria"
+        }, {
+            name: "Kanpur, India"
+        }, {
+            name: "Kaohsiung, Taiwan"
+        }, {
+            name: "Karachi, Pakistan"
+        }, {
+            name: "Karaj, Iran"
+        }, {
+            name: "Kathmandu, Nepal"
+        }, {
+            name: "Kawasaki, Japan"
+        }, {
+            name: "Kharkiv, Ukraine"
+        }, {
+            name: "Khartoum, Sudan"
+        }, {
+            name: "Khulna, Bangladesh"
+        }, {
+            name: "Kigali, Rwanda"
+        }, {
+            name: "Kingsburg, United States"
+        }, {
+            name: "Kingston, Jamaica"
+        }, {
+            name: "Kingstown, Saint Vincent and the Grenadines"
+        }, {
+            name: "Kinshasa, Democratic Republic of the Congo"
+        }, {
+            name: "Kobe, Japan"
+        }, {
+            name: "Kolkata, India"
+        }, {
+            name: "Kota Bharu, Malaysia"
+        }, {
+            name: "Kowloon, Hong Kong"
+        }, {
+            name: "Kuala Lumpur, Malaysia"
+        }, {
+            name: "Kumasi, Ghana"
+        }, {
+            name: "Kuwait, Kuwait"
+        }, {
+            name: "Kyiv, Ukraine"
+        }, {
+            name: "Kyoto, Japan"
+        }, {
+            name: "La Paz, Bolivia"
+        }, {
+            name: "Lagos, Nigeria"
+        }, {
+            name: "Lahore, Pakistan"
+        }, {
+            name: "Libreville, Gabon"
+        }, {
+            name: "Lilongwe, Malawi"
+        }, {
+            name: "Lima, Peru"
+        }, {
+            name: "Lisbon, Portugal"
+        }, {
+            name: "Ljubljana, Slovenia"
+        }, {
+            name: "Lome, Togo"
+        }, {
+            name: "London, United Kingdom"
+        }, {
+            name: "Los Angeles, United States"
+        }, {
+            name: "Luanda, Angola"
+        }, {
+            name: "Lubumbashi, Democratic Republic of the Congo"
+        }, {
+            name: "Lusaka, Zambia"
+        }, {
+            name: "Luxembourg, Luxembourg"
+        }, {
+            name: "Macau, Macao"
+        }, {
+            name: "Madrid, Spain"
+        }, {
+            name: "Majuro, Marshall Islands"
+        }, {
+            name: "Makassar, Indonesia"
+        }, {
+            name: "Malabo, Equatorial Guinea"
+        }, {
+            name: "Male, Maldives"
+        }, {
+            name: "Mamoudzou, Mayotte"
+        }, {
+            name: "Managua, Nicaragua"
+        }, {
+            name: "Manama, Bahrain"
+        }, {
+            name: "Manaus, Brazil"
+        }, {
+            name: "Manila, Philippines"
+        }, {
+            name: "Maputo, Mozambique"
+        }, {
+            name: "Maracaibo, Venezuela"
+        }, {
+            name: "Maracay, Venezuela"
+        }, {
+            name: "Mariehamn, Aland Islands"
+        }, {
+            name: "Marigot, Saint Martin"
+        }, {
+            name: "Maseru, Lesotho"
+        }, {
+            name: "Mashhad, Iran"
+        }, {
+            name: "Mbabane, Eswatini"
+        }, {
+            name: "Mecca, Saudi Arabia"
+        }, {
+            name: "Medan, Indonesia"
+        }, {
+            name: "Medellin, Colombia"
+        }, {
+            name: "Medina, Saudi Arabia"
+        }, {
+            name: "Melbourne, Australia"
+        }, {
+            name: "Mexico City, Mexico"
+        }, {
+            name: "Miami, United States"
+        }, {
+            name: "Minsk, Belarus"
+        }, {
+            name: "Mogadishu, Somalia"
+        }, {
+            name: "Monaco, Monaco"
+        }, {
+            name: "Monrovia, Liberia"
+        }, {
+            name: "Montevideo, Uruguay"
+        }, {
+            name: "Montreal, Canada"
+        }, {
+            name: "Moroni, Comoros"
+        }, {
+            name: "Moscow, Russia"
+        }, {
+            name: "Mosul, Iraq"
+        }, {
+            name: "Multan, Pakistan"
+        }, {
+            name: "Mumbai, India"
+        }, {
+            name: "Muscat, Oman"
+        }, {
+            name: "N'Djamena, Chad"
+        }, {
+            name: "Nagoya, Japan"
+        }, {
+            name: "Nairobi, Kenya"
+        }, {
+            name: "Nanchong, China"
+        }, {
+            name: "Nanjing, China"
+        }, {
+            name: "Nassau, Bahamas"
+        }, {
+            name: "Nay Pyi Taw, Myanmar"
+        }, {
+            name: "New York, United States"
+        }, {
+            name: "Niamey, Niger"
+        }, {
+            name: "Nicosia, Cyprus"
+        }, {
+            name: "Nouakchott, Mauritania"
+        }, {
+            name: "Noumea, New Caledonia"
+        }, {
+            name: "Novosibirsk, Russia"
+        }, {
+            name: "Nuku'alofa, Tonga"
+        }, {
+            name: "Nur-Sultan, Kazakhstan"
+        }, {
+            name: "Nuuk, Greenland"
+        }, {
+            name: "Oranjestad, Aruba"
+        }, {
+            name: "Osaka, Japan"
+        }, {
+            name: "Oslo, Norway"
+        }, {
+            name: "Ottawa, Canada"
+        }, {
+            name: "Ouagadougou, Burkina Faso"
+        }, {
+            name: "Pago Pago, American Samoa"
+        }, {
+            name: "Palembang, Indonesia"
+        }, {
+            name: "Palo Alto, United States"
+        }, {
+            name: "Panama, Panama"
+        }, {
+            name: "Papeete, French Polynesia"
+        }, {
+            name: "Paramaribo, Suriname"
+        }, {
+            name: "Paris, France"
+        }, {
+            name: "Perth, Australia"
+        }, {
+            name: "Philadelphia, United States"
+        }, {
+            name: "Phnom Penh, Cambodia"
+        }, {
+            name: "Phoenix, United States"
+        }, {
+            name: "Podgorica, Montenegro"
+        }, {
+            name: "Port Louis, Mauritius"
+        }, {
+            name: "Port Moresby, Papua New Guinea"
+        }, {
+            name: "Port of Spain, Trinidad and Tobago"
+        }, {
+            name: "Port-Vila, Vanuatu"
+        }, {
+            name: "Port-au-Prince, Haiti"
+        }, {
+            name: "Porto Alegre, Brazil"
+        }, {
+            name: "Porto-Novo, Benin"
+        }, {
+            name: "Prague, Czechia"
+        }, {
+            name: "Praia, Cabo Verde"
+        }, {
+            name: "Pretoria, South Africa"
+        }, {
+            name: "Pristina, Kosovo"
+        }, {
+            name: "Puebla, Mexico"
+        }, {
+            name: "Pune, India"
+        }, {
+            name: "Pyongyang, North Korea"
+        }, {
+            name: "Quezon City, Philippines"
+        }, {
+            name: "Quito, Ecuador"
+        }, {
+            name: "Rabat, Morocco"
+        }, {
+            name: "Rawalpindi, Pakistan"
+        }, {
+            name: "Recife, Brazil"
+        }, {
+            name: "Reykjavik, Iceland"
+        }, {
+            name: "Riga, Latvia"
+        }, {
+            name: "Rio de Janeiro, Brazil"
+        }, {
+            name: "Riyadh, Saudi Arabia"
+        }, {
+            name: "Road Town, British Virgin Islands"
+        }, {
+            name: "Rome, Italy"
+        }, {
+            name: "Roseau, Dominica"
+        }, {
+            name: "Saint George's, Grenada"
+        }, {
+            name: "Saint Helier, Jersey"
+        }, {
+            name: "Saint John's, Antigua and Barbuda"
+        }, {
+            name: "Saint Peter Port, Guernsey"
+        }, {
+            name: "Saint Petersburg, Russia"
+        }, {
+            name: "Saint-Denis, Reunion"
+        }, {
+            name: "Saint-Pierre, Reunion"
+        }, {
+            name: "Saipan, Northern Mariana Islands"
+        }, {
+            name: "Salvador, Brazil"
+        }, {
+            name: "San Antonio, United States"
+        }, {
+            name: "San Diego, United States"
+        }, {
+            name: "San Francisco, United States"
+        }, {
+            name: "San Jose, United States"
+        }, {
+            name: "San Juan, Argentina"
+        }, {
+            name: "San Marino, United States"
+        }, {
+            name: "San Salvador, El Salvador"
+        }, {
+            name: "Sanaa, Yemen"
+        }, {
+            name: "Santa Cruz de la Sierra, Bolivia"
+        }, {
+            name: "Santiago, Chile"
+        }, {
+            name: "Santo Domingo, Dominican Republic"
+        }, {
+            name: "Sao Paulo, Brazil"
+        }, {
+            name: "Sao Tome, Sao Tome and Principe"
+        }, {
+            name: "Sapporo, Japan"
+        }, {
+            name: "Sarajevo, Bosnia and Herzegovina"
+        }, {
+            name: "Seattle, United States"
+        }, {
+            name: "Semarang, Indonesia"
+        }, {
+            name: "Seoul, South Korea"
+        }, {
+            name: "Shanghai, China"
+        }, {
+            name: "Sharjah, United Arab Emirates"
+        }, {
+            name: "Shenzhen, China"
+        }, {
+            name: "Singapore, Singapore"
+        }, {
+            name: "Skopje, North Macedonia"
+        }, {
+            name: "Sofia, Bulgaria"
+        }, {
+            name: "South Tangerang, Indonesia"
+        }, {
+            name: "Soweto, South Africa"
+        }, {
+            name: "Stockholm, Sweden"
+        }, {
+            name: "Sucre, Bolivia"
+        }, {
+            name: "Surabaya, Indonesia"
+        }, {
+            name: "Surat, India"
+        }, {
+            name: "Suva, Fiji"
+        }, {
+            name: "Sydney, Australia"
+        }, {
+            name: "Tabriz, Iran"
+        }, {
+            name: "Taipei, Taiwan"
+        }, {
+            name: "Tallinn, Estonia"
+        }, {
+            name: "Tangerang, Indonesia"
+        }, {
+            name: "Tarawa, Kiribati"
+        }, {
+            name: "Tashkent, Uzbekistan"
+        }, {
+            name: "Tbilisi, Georgia"
+        }, {
+            name: "Tegucigalpa, Honduras"
+        }, {
+            name: "Tehran, Iran"
+        }, {
+            name: "Tel Aviv, Israel"
+        }, {
+            name: "Thimphu, Bhutan"
+        }, {
+            name: "Tianjin, China"
+        }, {
+            name: "Tijuana, Mexico"
+        }, {
+            name: "Tirana, Albania"
+        }, {
+            name: "Tokyo, Japan"
+        }, {
+            name: "Toronto, Canada"
+        }, {
+            name: "Torshavn, Faroe Islands"
+        }, {
+            name: "Tripoli, Libya"
+        }, {
+            name: "Tunis, Tunisia"
+        }, {
+            name: "Ulan Bator, Mongolia"
+        }, {
+            name: "Vaduz, Liechtenstein"
+        }, {
+            name: "Valencia, Venezuela"
+        }, {
+            name: "Valletta, Malta"
+        }, {
+            name: "Vancouver, Canada"
+        }, {
+            name: "Victoria, Canada"
+        }, {
+            name: "Vienna, Austria"
+        }, {
+            name: "Vientiane, Laos"
+        }, {
+            name: "Vilnius, Lithuania"
+        }, {
+            name: "Warsaw, Poland"
+        }, {
+            name: "Washington, United States"
+        }, {
+            name: "Wellington, New Zealand"
+        }, {
+            name: "Willemstad, Curacao"
+        }, {
+            name: "Windhoek, Namibia"
+        }, {
+            name: "Wuhan, China"
+        }, {
+            name: "Xi'an, China"
+        }, {
+            name: "Yamoussoukro, Ivory Coast"
+        }, {
+            name: "Yangon, Myanmar"
+        }, {
+            name: "Yaounde, Cameroon"
+        }, {
+            name: "Yekaterinburg, Russia"
+        }, {
+            name: "Yerevan, Armenia"
+        }, {
+            name: "Yokohama, Japan"
+        }, {
+            name: "Zagreb, Croatia"
+        }],
         // Data source 'Object' key to be searched
         keys: ["name"]
     },
@@ -272,9 +769,10 @@ const autoCompleteJS = new autoComplete({
                 const selection = event.detail.selection.value;
                 autoCompleteJS.input.value = selection.name;
                 searchLocation();
+
                 x.style.display = "block";
-                
-                
+
+
             }
         }
     }
@@ -282,11 +780,11 @@ const autoCompleteJS = new autoComplete({
 
 //Expand Searchbox When Result Found
 document.querySelector("#autoComplete").addEventListener("response", function () {
-    
+
     container.style.height = '260px';
     weatherBox.classList.remove('fadeIn');
     weatherDetails.classList.remove('fadeIn');
-    
+
 });
 
 
@@ -307,95 +805,95 @@ function searchLocation() {
         // Spinner ON
         spinner.style.opacity = '1'
 
-    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${APIKey}`)
-        .then(response => response.json())
-        .then(json => {
+        fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${APIKey}`)
+            .then(response => response.json())
+            .then(json => {
 
 
-            // Spinner off
-            spinner.style.opacity = '0'
+                // Spinner off
+                spinner.style.opacity = '0'
 
-            // Location Not Found
+                // Location Not Found
 
-            if (json.cod === '404') {
-                container.style.height = '400px';
-                weatherBox.style.display = 'none';
-                weatherDetails.style.display = 'none';
-                error404.style.display = 'block';
-                error404.classList.add('fadeIn');
-                console.warn('Location Not Found!')
-                return;
-            }
+                if (json.cod === '404') {
+                    container.style.height = '400px';
+                    weatherBox.style.display = 'none';
+                    weatherDetails.style.display = 'none';
+                    error404.style.display = 'block';
+                    error404.classList.add('fadeIn');
+                    console.warn('Location Not Found!')
+                    return;
+                }
 
-            error404.style.display = 'none';
-            error404.classList.remove('fadeIn');   
+                error404.style.display = 'none';
+                error404.classList.remove('fadeIn');
 
-            //Location Found
+                //Location Found
 
-            console.log('Location Found!')
+                console.log('Location Found!')
 
-            const image = document.querySelector('.weather-box img');
-            const temperature = document.querySelector('.weather-box .temperature');
-            const description = document.querySelector('.weather-box .description');
-            const humidity = document.querySelector('.weather-details .humidity span');
-            const wind = document.querySelector('.weather-details .wind span');
-
-
-            //Weather PNG
-
-            switch (json.weather[0].main) {
-                case 'Clear':
-                    image.src = 'images/clear.png';
-                    break;
-
-                case 'Rain':
-                    image.src = 'images/rain.png';
-                    break;
-
-                case 'Snow':
-                    image.src = 'images/snow.png';
-                    break;
-
-                case 'Clouds':
-                    image.src = 'images/cloud.png';
-                    break;
-
-                case 'Haze':
-                    image.src = 'images/mist.png';
-                    break;
-
-                default:
-                    image.src = '';
-            }
-
-            //API Info
-
-            temperature.innerHTML = `${parseInt(json.main.temp)}<span>°C</span>`;
-            description.innerHTML = `${json.weather[0].description}`;
-            humidity.innerHTML = `${json.main.humidity}%`;
-            wind.innerHTML = `${parseInt(json.wind.speed)}Km/h`;
-
-            weatherBox.style.display = '';
-            weatherDetails.style.display = '';
-            weatherBox.classList.add('fadeIn');
-            weatherDetails.classList.add('fadeIn');
-            container.style.height = '600px';
+                const image = document.querySelector('.weather-box img');
+                const temperature = document.querySelector('.weather-box .temperature');
+                const description = document.querySelector('.weather-box .description');
+                const humidity = document.querySelector('.weather-details .humidity span');
+                const wind = document.querySelector('.weather-details .wind span');
 
 
-        });
+                //Weather PNG
+
+                switch (json.weather[0].main) {
+                    case 'Clear':
+                        image.src = 'images/clear.png';
+                        break;
+
+                    case 'Rain':
+                        image.src = 'images/rain.png';
+                        break;
+
+                    case 'Snow':
+                        image.src = 'images/snow.png';
+                        break;
+
+                    case 'Clouds':
+                        image.src = 'images/cloud.png';
+                        break;
+
+                    case 'Haze':
+                        image.src = 'images/mist.png';
+                        break;
+
+                    default:
+                        image.src = '';
+                }
+
+                //API Info
+
+                temperature.innerHTML = `${parseInt(json.main.temp)}<span>°C</span>`;
+                description.innerHTML = `${json.weather[0].description}`;
+                humidity.innerHTML = `${json.main.humidity}%`;
+                wind.innerHTML = `${parseInt(json.wind.speed)}Km/h`;
+
+                weatherBox.style.display = '';
+                weatherDetails.style.display = '';
+                weatherBox.classList.add('fadeIn');
+                weatherDetails.classList.add('fadeIn');
+                container.style.height = '600px';
+
+
+            });
 
     }
 }
 
 // Clear Search Button
 
-function clearSearch(){
-    
-    
-    
+function clearSearch() {
+
+
+
     inputText.value = ""
     container.style.height = '100px';
-    
+
 
     //Small Delay Before Resetting Search
 
@@ -405,10 +903,11 @@ function clearSearch(){
         weatherDetails.classList.remove('fadeIn');
         error404.classList.remove('fadeIn');
         x.style.display = "none";
-        console.log('Cleared Search');}
-    ,500)
-    
-    
+        console.log('Cleared Search');
+    }
+        , 500)
 
-    
+
+
+
 }
