@@ -813,20 +813,6 @@ function searchLocation() {
                 // Spinner off
                 spinner.style.opacity = '0'
 
-                // Location Not Found
-
-                if (json.cod === '404') {
-                    container.style.height = '400px';
-                    weatherBox.style.display = 'none';
-                    weatherDetails.style.display = 'none';
-                    error404.style.display = 'block';
-                    error404.classList.add('fadeIn');
-                    console.warn('Location Not Found!')
-                    return;
-                }
-
-                error404.style.display = 'none';
-                error404.classList.remove('fadeIn');
 
                 //Location Found
 
@@ -839,7 +825,7 @@ function searchLocation() {
                 const wind = document.querySelector('.weather-details .wind span');
 
 
-                //Weather PNG
+                //Weather PNG Switch
 
                 switch (json.weather[0].main) {
                     case 'Clear':
@@ -873,8 +859,9 @@ function searchLocation() {
                 humidity.innerHTML = `${json.main.humidity}%`;
                 wind.innerHTML = `${parseInt(json.wind.speed)}Km/h`;
 
-                weatherBox.style.display = '';
-                weatherDetails.style.display = '';
+                
+
+                //Animations
                 weatherBox.classList.add('fadeIn');
                 weatherDetails.classList.add('fadeIn');
                 container.style.height = '600px';
@@ -901,7 +888,6 @@ function clearSearch() {
     setTimeout(() => {
         weatherBox.classList.remove('fadeIn');
         weatherDetails.classList.remove('fadeIn');
-        error404.classList.remove('fadeIn');
         x.style.display = "none";
         console.log('Cleared Search');
     }
