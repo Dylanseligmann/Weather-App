@@ -11,7 +11,7 @@ const lastSearchFromLocal = localStorage.getItem('Last-Search')
 const previousSearch = document.getElementById('previous-Search')
 
 
-//Last Search
+//Last Search Check
 
 if (lastSearchFromLocal == null) {
     lastSearchContainer.style.display = 'none';
