@@ -2,11 +2,28 @@ const container = document.querySelector('.container');
 const search = document.querySelector('.search-box button');
 const weatherBox = document.querySelector('.weather-box');
 const weatherDetails = document.querySelector('.weather-details');
-const error404 = document.querySelector('.not-found');
 const spinner = document.getElementById('spinner')
 const inputText = document.getElementById('autoComplete')
 const form = document.getElementById('form')
 const x = document.getElementById('x');
+const lastSearchContainer = document.getElementById('lastSearchContainer')
+const lastSearchFromLocal = localStorage.getItem('Last-Search')
+const previousSearch = document.getElementById('previous-Search')
+
+
+//Last Search
+
+if (lastSearchFromLocal == null) {
+    lastSearchContainer.style.display = 'none';
+}
+else{
+    lastSearchContainer.style.display ='block' 
+    previousSearch.innerHTML = lastSearchFromLocal
+}
+
+
+//hasSearched set to false so Box collapses with Blur Event
+let hasSearched = false;
 
 
 //Autocomplete Countries
@@ -765,18 +782,27 @@ const autoCompleteJS = new autoComplete({
     },
     events: {
         input: {
+            //Event executed when Country is selected
             selection: (event) => {
                 const selection = event.detail.selection.value;
                 autoCompleteJS.input.value = selection.name;
                 searchLocation();
 
+                //Show Clear Button 
                 x.style.display = "block";
+                x.classList.remove('ph-hidden')
+
+                //Save Last Selection to Local Storage
+
+                localStorage.setItem("Last-Search", JSON.stringify(selection.name));
+
 
 
             }
         }
     }
 });
+
 
 //Expand Searchbox When Result Found
 document.querySelector("#autoComplete").addEventListener("response", function () {
@@ -788,8 +814,36 @@ document.querySelector("#autoComplete").addEventListener("response", function ()
 });
 
 
-//Search Button onClick -> SearchLocation()
+//Collapse Searchbox When Empty
+inputText.addEventListener('input', function () {
 
+    if (inputText.value === '') {
+
+        container.style.height = '100px'
+    }
+});
+
+
+// Collapse SearchBox When Not Focused
+inputText.addEventListener('blur', function () {
+
+    // Has Searched for Box collapse
+    if (hasSearched) {
+        return
+    }
+
+    container.style.height = '100px';
+});
+
+
+//Re-trigger Search When inputText is Focused
+inputText.addEventListener('focus', function () {
+
+    autoCompleteJS.start()
+})
+
+
+//Search Function
 function searchLocation() {
 
     const APIKey = 'a05643bc79f88f80b3e2f0bf432deab2';
@@ -797,10 +851,14 @@ function searchLocation() {
 
     //Empty Input Do Nothing
 
-    if (city === '')
-        return;
+    if (city === '') {
 
+        return;
+    }
     else {
+
+        //hasSearched To True So Searchbox Does Not Collapse After Search
+        hasSearched = true
 
         // Spinner ON
         spinner.style.opacity = '1'
@@ -859,7 +917,7 @@ function searchLocation() {
                 humidity.innerHTML = `${json.main.humidity}%`;
                 wind.innerHTML = `${parseInt(json.wind.speed)}Km/h`;
 
-                
+
 
                 //Animations
                 weatherBox.classList.add('fadeIn');
@@ -872,11 +930,12 @@ function searchLocation() {
     }
 }
 
-// Clear Search Button
 
+// Clear Search Button
 function clearSearch() {
 
 
+    hasSearched = false
 
     inputText.value = ""
     container.style.height = '100px';
@@ -888,12 +947,23 @@ function clearSearch() {
     setTimeout(() => {
         weatherBox.classList.remove('fadeIn');
         weatherDetails.classList.remove('fadeIn');
-        x.style.display = "none";
+        x.classList.add('ph-hidden')
         console.log('Cleared Search');
+
     }
         , 500)
 
+    setTimeout(() => {
 
+        x.style.display = 'none'
+    }
 
+        , 1000)
+
+    //Show last Search
+
+    previousSearch.innerText = localStorage.getItem('Last-Search')
+    lastSearchContainer.style.display = 'block'
+    
 
 }
